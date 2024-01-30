@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, ReactNode } from "react";
-import { promises } from "readline";
 
 interface formProps {
     children: ReactNode;
@@ -14,7 +13,8 @@ export default function Form({ children, action, className, onSubmit }: formProp
     const ref = useRef<HTMLFormElement>(null);
 
     return (
-        <form className={className}
+        <form
+        className={className}
         onSubmit={onSubmit}
         ref={ref}
         action={async (formData) => {
